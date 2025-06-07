@@ -36,3 +36,7 @@ Pour vous connecter via dbeaver, il faut forward le port de postgres:
 ```bash
 kubectl port-forward svc/postgres-service 5432:5432
 ```
+
+## Author
+
+[Namularbre](https://github.com/Namularbre)

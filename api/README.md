@@ -17,3 +17,6 @@ This file describe the service pokeapi
 - List pokemons
 - add a pokemon
 
+## Author
+
+[Namularbre](https://github.com/Namularbre)

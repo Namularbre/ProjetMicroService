@@ -14,7 +14,11 @@ This file describe the service pokeapi
 
 ## pokeapi-secret
 
-Contains the secrets of the application, related to 
+Contains the secrets of the application, related to the database connection
+
+## pokeapi-ingressroute
+
+Create an ingress for the api, that permit other application to access the api via traefik
 
 ## functionalities
 

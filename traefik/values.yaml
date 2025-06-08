@@ -1,0 +1,11 @@
+ports:
+  traefik:
+    port: 9000
+    expose:
+      default: true
+    exposedPort: 9000
+    protocol: TCP
+
+additionalArguments:
+  - "--api.dashboard=true"
+  - "--api.insecure=true"

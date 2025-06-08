@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: postgres-service
 spec:
-  type: NodePort #ClusterIP permet de rendre ce service accessible uniquement dans le cluster k8s
+  type: ClusterIP
   selector:
     app: postgres
   ports:
     - protocol: TCP
       port: 5432
       targetPort: 5432
-      nodePort: 30007

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-initdb-config
+data:
+  init.sql: |
+    CREATE USER api_user WITH PASSWORD 'api_password';
+    CREATE DATABASE api_db OWNER api_user;
+    CREATE USER kong_user WITH PASSWORD 'kong_password';
+    CREATE DATABASE kong_db OWNER kong_user;

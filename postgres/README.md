@@ -1,40 +1,39 @@
 # Setup de progres dans K8S
 
-## 1. ConfigMap.yml
+## 1. Config map & secret
 
-Permet de stocker la configuration de postgres.
-
-```bash
-kubectl apply -f postgres-pvc.yaml
-```
-
-## 2. Le persistant volume
-
-Permet de demander de l'esplace de stockage persistant, comme les volumes de docker.
+Permet de stocker la configuration de postgres. Les secrets c'est pour les mots de passe.
 
 ```bash
 kubectl apply -f postgres-config.yaml
 ```
 
-## 3. Déploiement
-
-Permet de décrire le déployement pour exécuter postgres.
-
 ```bash
-kubectl apply -f postgres-deployment.yaml
+kubectl apply -f postgres-secret.yaml
 ```
 
-## 4. Création du service pour rendre postgres accessible au pod
+```bash
+kubectl apply -f postgres-configmap.yaml
+```
+
+## 2. Déploiement
+
+Permet de décrire le déployement pour exécuter postgres. On utilise un stateful set pour avoir une pvc (du stockage permanant, style volume docker) ce qui est pas mal pour garder les données.
+
+```bash
+kubectl apply -f postgres-statefulset.yaml
+```
+
+## 3. Création du service pour rendre postgres accessible au pod
 
 ```bash
 kubectl apply -f postgres-service.yaml
 ```
 
-## 5. Forwarding
+## 4. Vérification
 
-Pour vous connecter via dbeaver, il faut forward le port de postgres:
 ```bash
-kubectl port-forward svc/postgres-service 5432:5432
+minikube dashboard
 ```
 
 ## Author

@@ -14,3 +14,7 @@ Par exemple, pour accéder à l'api, il faut passer par /pokeapi sur traefik, ma
 values.yaml sert à configurer traefik avec helm.
 
 Le dashboard de traefik est accessible sur le port 9000, mais cela demande une redirection
+
+## Author
+
+[Namularbre](https://github.com/Namularbre)

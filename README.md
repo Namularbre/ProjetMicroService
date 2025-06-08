@@ -1,5 +1,25 @@
-# Setup MongoDB pour K8S
+# Projet MicroService Thomas SAZERAT
 
-- mongodb-pvc.yml permet de demander du stockage à k8s
-- mongodb-statefulset.yml permet d'avoir l'état stateful (on garde l'état de l'application, ce qui est logique pour une base de données)
-- mongodb-server.yml décrit le service mongodb
+Ce projet à pour but de me faire découvrir l'architecture des micro-services.
+
+Se projet dois contenir:
+- Une base de données déployée dans un pod
+- Une application web
+- Un accès (loadbalancer/apigateway) à l'exterieur du cluster kubernetes
+
+Se projet peut contenir:
+- Un Grafana pour monitorer l'api, l'api gateway
+- Une application frontend pour utiliser l'api
+- Un load balancer (vue que j'ai une api gateway)
+
+## Répartition des tâches :
+
+Développement: Thomas
+Déployement: Thomas
+Base de données: Thomas
+
+Jonas et Rodolphe on préféré jouer à Magic the Gathering, ils n'ont pas apporter de contribution au projet
+
+## Auteurs
+
+[Namularbre](https://github.com/Namularbre)

@@ -23,7 +23,26 @@ spec:
             - containerPort: 8000
               protocol: TCP
           env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: pokeapi-secrets
+                  key: DB_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pokeapi-secrets
+                  key: DB_PASSWORD
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: pokeapi-secrets
+                  key: DB_HOST
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: pokeapi-secrets
+                  key: DB_NAME
             - name: DATABASE_URL
-              value: "postgresql://myuser:mypassword@postgres-service:5432/mydatabase"
+              value: "postgresql://$(DB_USER):$(DB_PASSWORD)@$(DB_HOST):5432/$(DB_NAME)"
       restartPolicy: Always
-      

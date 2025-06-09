@@ -5,11 +5,14 @@ class PokemonService {
         try {
             const response = await fetch(PokemonService._TRAEFIK_URL);
 
-            if (response.ok) {
+            if (!response.ok) {
                 throw new Error(`API response is not ok: ${response.status}: ${await response.json()}`);
             }
 
-            return await response.json();
+            const pokemons = await response.json();
+            console.log(pokemons);
+
+            return pokemons;
         } catch (e) {
             console.error(e.message);
             return [];
@@ -35,6 +38,9 @@ class PokemonService {
             const response = await fetch(PokemonService._TRAEFIK_URL, {
                 method: 'POST',
                 body: jsonPokemon,
+                headers: {
+                    "Content-Type": "application/json",
+                },
             });
 
             if (!response.ok) {

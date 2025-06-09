@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PokemonService from '../services/pokemonService';
 
 function AddPokemonForm() {
   const [formData, setFormData] = useState({
@@ -38,41 +39,47 @@ function AddPokemonForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Nom:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="type1">Type 1:</label>
-        <input
-          type="text"
-          id="type1"
-          name="type1"
-          value={formData.type1}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="type2">Type 2:</label>
-        <input
-          type="text"
-          id="type2"
-          name="type2"
-          value={formData.type2}
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit">Ajouter Pokémon</button>
-    </form>
+    <div className='border p-3'>
+      <h5>Add a pokemon</h5>
+      <form onSubmit={handleSubmit} className='form'>
+        <div className='form-group'>
+          <label htmlFor="name" className='form-label'>Nom:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor="type1" className='form-label'>Type 1:</label>
+          <input
+            type="text"
+            id="type1"
+            name="type1"
+            value={formData.type1}
+            onChange={handleChange}
+            required
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor="type2" className='form-label'>Type 2:</label>
+          <input
+            type="text"
+            id="type2"
+            name="type2"
+            value={formData.type2}
+            onChange={handleChange}
+            className='form-control'
+          />
+        </div>
+        <button type="submit" className='btn btn-primary mt-3'>Ajouter Pokémon</button>
+      </form>
+    </div>
   );
 }
 

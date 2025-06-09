@@ -4,6 +4,7 @@ import AddPokemonForm from './components/AddPokemonForm';
 import Pokemon from './components/Pokemon';
 import { useEffect } from 'react';
 import PokemonService from './services/pokemonService';
+import 'bootstrap/dist/css/bootstrap.css';
 
 /**
  * The application component
@@ -38,7 +39,7 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className='App container'>
       <h1>Pokeapp</h1>
       <AddPokemonForm></AddPokemonForm>
       <div>
@@ -46,13 +47,24 @@ function App() {
       {pokemons.length === 0 ? (
         <p>Aucun Pokémon trouvé.</p>
       ) : (
-        <ul>
-          {pokemons.map((pokemon, index) => (
-            <li key={index}>
-              <Pokemon id={pokemon.id} name={pokemon.name} type1={pokemon.type1} type2={pokemon.type2}></Pokemon>
-            </li>
-          ))}
-        </ul>
+        <table className='table table-striped table-hover'>
+          <caption>
+            Liste des pokémons
+          </caption>
+          <thead>
+            <tr>
+              <th scope='col'>#</th>
+              <th scope='col'>Name</th>
+              <th scope='col'>Type I</th>
+              <th scope='col'>Type II</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pokemons.map((pokemon, index) => (
+                <Pokemon id={pokemon.id} name={pokemon.name} type1={pokemon.type1} type2={pokemon.type2}></Pokemon>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
     </div>

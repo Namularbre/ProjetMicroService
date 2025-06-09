@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 
 /**
  * Pokémon component
@@ -6,20 +7,14 @@
  * @param {string} type1 
  * @param {string|null} type2 
  */
-function Pokemon(id, name, type1, type2) {
+function Pokemon({id, name, type1, type2}) {
     return (
-        <div className="Pokemon">
-            <dl>
-                <dt>Name</dt>
-                <dd>{name}</dd>
-
-                <dt>Type 1</dt>
-                <dd>{type1}</dd>
-
-                <dt>Type 2</dt>
-                {type2 ? <dd>{type2}</dd> : <dd>{aucun}</dd>}
-            </dl>
-        </div>
+        <tr className="Pokemon">
+            <th scope='row'>{id}</th>
+            <td>{name}</td>
+            <td>{type1}</td>
+            <td>{type2}</td>
+        </tr>
     );
 }
 

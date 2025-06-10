@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.params import Depends
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
 
@@ -9,6 +10,14 @@ from dbconnection import get_db, Pokemon
 
 # The application
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],  # Autorise toutes les méthodes
+    allow_headers=["*"],  # Autorise tous les en-têtes
+)
 
 class AddPokemon(BaseModel):
     """

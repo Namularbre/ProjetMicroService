@@ -1,0 +1,15 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: frontend-ingressroute
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: PathPrefix(`/poke`)
+      kind: Rule
+      services:
+        - name: frontend
+          port: 3000
+      middlewares:
+        - name: global-strip-prefix

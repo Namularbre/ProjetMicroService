@@ -1,25 +1,23 @@
-# Projet MicroService Thomas SAZERAT
+# Projet MicroService Rodolphe et Jonas LIMOUSIN, Thomas SAZERAT
 
 Ce projet à pour but de me faire découvrir l'architecture des micro-services.
 
-Se projet dois contenir:
+Se projet contient:
 - Une base de données déployée dans un pod
 - Une application web
 - Un accès (loadbalancer/apigateway) à l'exterieur du cluster kubernetes
 
-Se projet peut contenir:
-- Un Grafana pour monitorer l'api, l'api gateway
+Piste d'amélioration:
+- Un Grafana pour monitorer l'api, l'api gateway, la base de données
 - Une application frontend pour utiliser l'api
-- Un load balancer (vue que j'ai une api gateway)
+- Un load balancer (vue qu'on a une api gateway)
 
 ## Répartition des tâches :
 
-Développement: Thomas
-Déployement: Thomas
-Base de données: Thomas
-
-Jonas et Rodolphe on préféré jouer à Magic the Gathering, ils n'ont pas apporter de contribution au projet
+Développement: Rodolphe (Back), Jonas (Front)
+Postgres, Api Gateway, gestion du projet, mise sous Kubernetes: Thomas
 
 ## Auteurs
 
 [Namularbre](https://github.com/Namularbre)
+Et d'autre qui se rajouterons s'ils le veulent

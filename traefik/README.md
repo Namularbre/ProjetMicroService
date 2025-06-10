@@ -15,6 +15,14 @@ values.yaml sert à configurer traefik avec helm.
 
 Le dashboard de traefik est accessible sur le port 9000, mais cela demande une redirection
 
+## Aide
+
+Accéder au app:
+
+```
+minikube service traefik --url
+```
+
 ## Author
 
 [Namularbre](https://github.com/Namularbre)

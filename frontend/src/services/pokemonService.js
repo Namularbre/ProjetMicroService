@@ -1,5 +1,5 @@
 class PokemonService {
-    static _TRAEFIK_URL = `${process.env.REACT_APP_API_URL}/pokeapi` || 'http://localhost:8080/pokeapi';
+    static _TRAEFIK_URL = `${window.REACT_APP_API_URL}/pokeapi` || 'http://localhost:8080/pokeapi';
 
     static async getAll() {
         try {
